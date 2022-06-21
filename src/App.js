@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import axios from "./config/axios";
+import { useAuth } from "./context/auth";
+import Login from "./pages/login";
+import Spinner from "./components/spinner";
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 function App() {
+  const auth = useAuth();
+
+  useEffect(() => {
+    auth.setUserLoading("loading");
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/me`)
+      .then(({ data }) => {
+        auth.setUser(data.user);
+        auth.setUserLoading("loaded");
+      })
+      .catch(() => {
+        auth.setUser(null);
+        auth.setJwt("logged_out");
+        auth.setUserLoading("loaded");
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (auth.userLoading === "loading") {
+    return <Spinner className="my-8" />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer
+        position="bottom-right"
+        hideProgressBar={true}
+        theme="light"
+        transition={Slide}
+      />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

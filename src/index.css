@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply font-poppins;
+    @apply font-poppins bg-slate-100;
   }
 }
 

@@ -6,6 +6,7 @@ import Login from "./pages/login";
 import Spinner from "./components/spinner";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import Signup from "./pages/signup";
 
 function App() {
   const auth = useAuth();
@@ -41,6 +42,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </>

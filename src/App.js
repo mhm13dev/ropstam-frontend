@@ -5,6 +5,8 @@ import { useAuth } from "./context/auth";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Dashboard from "./pages/dashboard";
+import Categories from "./pages/categories";
+import SingleCategory from "./pages/single.category";
 import Spinner from "./components/spinner";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -45,6 +47,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/categories/:id" element={<SingleCategory />} />
         </Routes>
       </BrowserRouter>
     </>

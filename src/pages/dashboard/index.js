@@ -37,7 +37,7 @@ const Dashboard = () => {
       });
   }, []);
 
-  if (!auth.user) {
+  if (auth.userLoading === "loaded" && !auth.user) {
     return <Navigate to={"/"} replace />;
   }
 

@@ -40,7 +40,7 @@ const Login = () => {
       });
   }
 
-  if (auth.user) {
+  if (auth.userLoading === "loaded" && auth.user) {
     return <Navigate to={"/dashboard"} replace />;
   }
 
@@ -57,7 +57,9 @@ const Login = () => {
                 type="email"
                 placeholder="Email"
                 {...register("email")}
-                className="appearance-none w-full p-2 rounded font-light placeholder-gray-500 text-gray-900 focus:outline-none ring-2 ring-gray-300 focus:ring-indigo-500"
+                className={`appearance-none w-full p-2 rounded font-light placeholder-gray-500 text-gray-900 focus:outline-none ring-2 ring-gray-300 focus:ring-indigo-500 ${
+                  errors.email ? "ring-red-500 focus:ring-red-500" : ""
+                }`}
                 autoComplete="false"
               />
               {errors.email && (
@@ -71,7 +73,9 @@ const Login = () => {
                 type="password"
                 placeholder="Password"
                 {...register("password")}
-                className="appearance-none w-full p-2 rounded font-light placeholder-gray-500 text-gray-900 focus:outline-none ring-2 ring-gray-300 focus:ring-indigo-500"
+                className={`appearance-none w-full p-2 rounded font-light placeholder-gray-500 text-gray-900 focus:outline-none ring-2 ring-gray-300 focus:ring-indigo-500 ${
+                  errors.password ? "ring-red-500 focus:ring-red-500" : ""
+                }`}
                 autoComplete="false"
               />
               {errors.password && (

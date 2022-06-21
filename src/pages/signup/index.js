@@ -38,7 +38,7 @@ const Signup = () => {
       });
   }
 
-  if (auth.user) {
+  if (auth.userLoading === "loaded" && auth.user) {
     return <Navigate to={"/dashboard"} replace />;
   }
 

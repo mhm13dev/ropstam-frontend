@@ -8,6 +8,12 @@ This repository contains the frontend code for the given task.
 - `npm install`
 - `npm start`
 
+### Important Links
+
+✨ [Backend Repository](https://github.com/mhm13dev/ropstam-backend)
+
+✨ [Postman Workspace](https://www.postman.com/dark-sunset-507082/workspace/ropstam-solutions)
+
 ### Pages
 
 `/` - Login Page

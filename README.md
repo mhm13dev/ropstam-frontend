@@ -14,6 +14,8 @@ This repository contains the frontend code for the given task.
 
 ✨ [Postman Workspace](https://www.postman.com/dark-sunset-507082/workspace/ropstam-solutions)
 
+✨ [Project Walk through](https://www.loom.com/share/47b66a73b03c456d80fcf2d5b4c5486e)
+
 ### Pages
 
 `/` - Login Page

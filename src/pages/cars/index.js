@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { joiResolver } from "@hookform/resolvers/joi";
 import CarsTable from "./cars.table";
 import { NewCarSchema } from "../../schemas/car.schema";
+import PageHeading from "../../components/page.heading";
 
 const Cars = () => {
   const auth = useAuth();
@@ -78,9 +79,7 @@ const Cars = () => {
     <div className="app-container">
       <div className="min-h-screen p-4">
         <div className="w-full bg-white shadow mx-auto rounded-md p-8">
-          <h1 className="text-2xl font-semibold text-center mb-12 text-indigo-500">
-            Cars - Ropstam Solutions
-          </h1>
+          <PageHeading text="Cars - Ropstam Solutions" />
 
           <form
             onSubmit={handleSubmit(onSubmit)}

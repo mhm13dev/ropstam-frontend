@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import axios from "../../config/axios";
 import { useAuth } from "../../context/auth";
 import { toast } from "react-toastify";
+import PageHeading from "../../components/page.heading";
 
 const Dashboard = () => {
   const auth = useAuth();
@@ -45,9 +46,7 @@ const Dashboard = () => {
     <div className="app-container">
       <div className="min-h-screen p-4">
         <div className="w-full bg-white shadow mx-auto rounded-md p-8">
-          <h1 className="text-2xl font-semibold text-center mb-12 text-indigo-500">
-            Dashboard - Ropstam Solutions
-          </h1>
+          <PageHeading text="Dashboard - Ropstam Solutions" />
 
           <div className="space-y-12">
             <div className="border-2 border-indigo-500 p-8 max-w-sm mx-auto text-center rounded-md space-y-4">

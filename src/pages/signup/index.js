@@ -6,6 +6,7 @@ import axios from "../../config/axios";
 import { useAuth } from "../../context/auth";
 import { SignupSchema } from "../../schemas/user.schema";
 import { toast } from "react-toastify";
+import PageHeading from "../../components/page.heading";
 
 const Signup = () => {
   const auth = useAuth();
@@ -46,9 +47,7 @@ const Signup = () => {
     <div className="app-container">
       <div className="min-h-screen grid items-center p-4">
         <div className="max-w-xl w-full bg-white shadow mx-auto rounded-md p-8">
-          <h1 className="text-2xl font-semibold text-center mb-8 text-indigo-500">
-            Ropstam Solutions
-          </h1>
+          <PageHeading text="Ropstam Solutions" />
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
               <input

@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { CategorySchema } from "../../schemas/category.schema";
 import CategoriesTable from "./categories.table";
+import PageHeading from "../../components/page.heading";
 
 const Categories = () => {
   const auth = useAuth();
@@ -64,9 +65,7 @@ const Categories = () => {
     <div className="app-container">
       <div className="min-h-screen p-4">
         <div className="w-full bg-white shadow mx-auto rounded-md p-8">
-          <h1 className="text-2xl font-semibold text-center mb-12 text-indigo-500">
-            Categories - Ropstam Solutions
-          </h1>
+          <PageHeading text="Categories - Ropstam Solutions" />
 
           <form
             onSubmit={handleSubmit(onSubmit)}

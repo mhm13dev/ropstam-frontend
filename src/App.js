@@ -9,6 +9,7 @@ import Categories from "./pages/categories";
 import SingleCategory from "./pages/single.category";
 import Cars from "./pages/cars";
 import SingleCar from "./pages/single.car";
+import Nav from "./components/nav";
 import Spinner from "./components/spinner";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -45,6 +46,7 @@ function App() {
         transition={Slide}
       />
       <BrowserRouter>
+        <Nav />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

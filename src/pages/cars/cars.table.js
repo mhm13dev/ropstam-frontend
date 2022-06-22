@@ -14,13 +14,16 @@ const CarsTable = ({ data, categories }) => {
     if (categories.length === 0) return;
     const table = $(tableRef.current).DataTable({
       data: data.map((car) => [
+        car._id,
         car.model,
         car.make,
         car.reg_num,
-        car.color,
         categories.find((c) => c._id === car.category_id).name,
       ]),
       columns: [
+        {
+          title: "ID",
+        },
         {
           title: "Model",
         },
@@ -29,9 +32,6 @@ const CarsTable = ({ data, categories }) => {
         },
         {
           title: "Registration No",
-        },
-        {
-          title: "Color",
         },
         {
           title: "Category",

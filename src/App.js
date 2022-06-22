@@ -7,6 +7,8 @@ import Signup from "./pages/signup";
 import Dashboard from "./pages/dashboard";
 import Categories from "./pages/categories";
 import SingleCategory from "./pages/single.category";
+import Cars from "./pages/cars";
+import SingleCar from "./pages/single.car";
 import Spinner from "./components/spinner";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -49,6 +51,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/:id" element={<SingleCategory />} />
+          <Route path="/cars" element={<Cars />} />
+          <Route path="/cars/:id" element={<SingleCar />} />
         </Routes>
       </BrowserRouter>
     </>
